@@ -14,6 +14,7 @@ module tt_um_lif (
 
     // use bidirectionals as outputs
     assign uio_oe = 8'b11111111;
+    assign uio_out[6:0] = 7'd0;
 
 
     // instantiate lif neuron
