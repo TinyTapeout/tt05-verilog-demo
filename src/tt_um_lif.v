@@ -15,13 +15,6 @@ module tt_um_lif (
     // use bidirectionals as outputs
     assign uio_oe = 8'b11111111;
 
-module lif (
-    input wire [7:0] current,
-    input wire       clk,
-    input wire       rst_n,
-    output wire      spike,
-    output reg [7:0] state
-);
 
     // instantiate lif neuron
     lif lif1(.current(ui_in), .clk(clk), .rst_n(rst_n), .spike(uio_out[7]), .state(uo_out));
