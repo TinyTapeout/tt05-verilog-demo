@@ -17,12 +17,11 @@ module lif (
         end else begin
             state <= next_state;
         end
+    end
 
     // next_state logic and spiking logic
     assign next_state = current + (state >> 1);
     assign spike = (state >= threshold);
-
-    end
 
 endmodule
 
