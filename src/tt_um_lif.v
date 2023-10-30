@@ -16,11 +16,10 @@ module tt_um_lif (
     assign uio_oe = 8'b11111111;
     assign uio_out[5:0] = 6'd0;
 
-    wire [7:0] state_out;
-
+    // wire [7:0] state_out;
 
     // instantiate lif neuron
-    lif lif1(.current(ui_in), .clk(clk), .rst_n(rst_n), .spike(uio_out[7]), .state(state_out));
-    lif lif2(.current({uio_out[7], 7'b0000000}), .clk(clk), .rst_n(rst_n), .spike(uio_out[6]), .state(uo_out));
+    lif lif1(.current(ui_in), .clk(clk), .rst_n(rst_n), .spike(uio_out[7]), .state(uo_out));
+    // lif lif2(.current({uio_out[7], 7'b0000000}), .clk(clk), .rst_n(rst_n), .spike(uio_out[6]), .state(uo_out));
 
 endmodule
