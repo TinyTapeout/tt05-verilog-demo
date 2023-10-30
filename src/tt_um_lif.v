@@ -14,7 +14,7 @@ module tt_um_lif (
 
     // use bidirectionals as outputs
     assign uio_oe = 8'b11111111;
-    assign uio_out[5:0] = 6'd0;
+    assign uio_out[6:0] = 6'd0;
 
     // wire [7:0] state_out;
 
