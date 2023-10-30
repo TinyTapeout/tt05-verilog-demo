@@ -13,15 +13,14 @@ module lif (
     always @(posedge clk) begin
         if (!rst_n) begin
             state <= 0;
-            threshold <= 240;
+            threshold <= 230;
         end else begin
             state <= next_state;
         end
     end
 
     // next_state logic and spiking logic
-    assign next_state = current + (spike ? 0 : (state >> 1)+(state>>2)+(state>>3));
     assign spike = (state >= threshold);
+    assign next_state = (spike ? 0 : current) + (spike ? 0 : (state >> 1)+(state >> 2)+(state >> 3));
 
 endmodule
-
