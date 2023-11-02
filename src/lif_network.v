@@ -11,7 +11,7 @@ module lif_network (
 
     wire [7:0] l1_out; // One output per lif neuron
     wire [63:0] l1_state;
-    wire [7:0] sum_in;
+    // wire [7:0] sum_in; 
     reg  [7:0] sum; // register to hold the summation
 
     //Instantiate 8 lif neurons
@@ -26,18 +26,25 @@ module lif_network (
 
     // Summing logic 
 
-    always @(posedge clk) begin
-        if (!rst_n) begin
-            sum <= 8'b0;
-        end else begin
-            sum <= sum_in;
-        end
+always @(posedge clk) begin
+    if (!rst_n) begin
+        sum <= 8'b0;
+    end else begin
+        sum <= {7'b0, l1_out[0]} + 
+               {7'b0, l1_out[1]} + 
+               {7'b0, l1_out[2]} + 
+               {7'b0, l1_out[3]} + 
+               {7'b0, l1_out[4]} + 
+               {7'b0, l1_out[5]} + 
+               {7'b0, l1_out[6]} + 
+               {7'b0, l1_out[7]};
     end
+end
 
-    always @(*) begin
-        sum_in = l1_out[0] + l1_out[1] + l1_out[2] + l1_out[3] + l1_out[4] +
-            l1_out[5] + l1_out[6] + l1_out[7];
-    end
+    // always @(*) begin
+    //     sum_in = l1_out[0] + l1_out[1] + l1_out[2] + l1_out[3] + l1_out[4] +
+    //         l1_out[5] + l1_out[6] + l1_out[7];
+    // end
 
 
     // Output neuron
