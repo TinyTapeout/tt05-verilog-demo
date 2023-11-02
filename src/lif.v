@@ -1,7 +1,7 @@
 `default_nettype none
 
 module lif ( 
-    input wire [7:0] current,
+    input wire current,
     input wire       clk,
     input wire       rst_n,
     output wire      spike,

@@ -14,14 +14,14 @@ module lif_network (
     reg  [7:0] sum; // register to hold the summation
 
     //Instantiate 8 lif neurons
-    lif lif1(.current(current[0]), .clk(clk), .rst_n(rst_n), .spike(l1_out[0]), .state(l1_state[0:7]));
-    lif lif2(.current(current[1]), .clk(clk), .rst_n(rst_n), .spike(l1_out[1]), .state(l1_state[8:15]));
-    lif lif3(.current(current[2]), .clk(clk), .rst_n(rst_n), .spike(l1_out[2]), .state(l1_state[16:23]));
-    lif lif4(.current(current[3]), .clk(clk), .rst_n(rst_n), .spike(l1_out[3]), .state(l1_state[24:31]));
-    lif lif5(.current(current[4]), .clk(clk), .rst_n(rst_n), .spike(l1_out[4]), .state(l1_state[32:39]));
-    lif lif6(.current(current[5]), .clk(clk), .rst_n(rst_n), .spike(l1_out[5]), .state(l1_state[40:47]));
-    lif lif7(.current(current[6]), .clk(clk), .rst_n(rst_n), .spike(l1_out[6]), .state(l1_state[48:55]));
-    lif lif8(.current(current[7]), .clk(clk), .rst_n(rst_n), .spike(l1_out[7]), .state(l1_state[56:63]));
+    lif lif1(.current(current[0]), .clk(clk), .rst_n(rst_n), .spike(l1_out[0]), .state(l1_state[7:0]));
+    lif lif2(.current(current[1]), .clk(clk), .rst_n(rst_n), .spike(l1_out[1]), .state(l1_state[15:8]));
+    lif lif3(.current(current[2]), .clk(clk), .rst_n(rst_n), .spike(l1_out[2]), .state(l1_state[23:16]));
+    lif lif4(.current(current[3]), .clk(clk), .rst_n(rst_n), .spike(l1_out[3]), .state(l1_state[31:24]));
+    lif lif5(.current(current[4]), .clk(clk), .rst_n(rst_n), .spike(l1_out[4]), .state(l1_state[39:32]));
+    lif lif6(.current(current[5]), .clk(clk), .rst_n(rst_n), .spike(l1_out[5]), .state(l1_state[47:40]));
+    lif lif7(.current(current[6]), .clk(clk), .rst_n(rst_n), .spike(l1_out[6]), .state(l1_state[55:48]));
+    lif lif8(.current(current[7]), .clk(clk), .rst_n(rst_n), .spike(l1_out[7]), .state(l1_state[63:56]));
 
     // Summing logic 
 
@@ -29,8 +29,8 @@ module lif_network (
         if (!rst_n) begin
             sum <= 0;
         end else begin
-            sum <= l1_out[0:7] + l1_out[8:15] + l1_out[16:23] + l1_out[24:31] + l1_out[32:39] +
-            l1_out[40:47] + l1_out[48:55] + l1_out[56:63];
+            sum <= l1_out[7:0] + l1_out[15:8] + l1_out[23:16] + l1_out[31:24] + l1_out[39:32] +
+            l1_out[47:40] + l1_out[55:48] + l1_out[63:56];
         end
     end
 
