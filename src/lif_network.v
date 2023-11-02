@@ -10,6 +10,7 @@ module lif_network (
 );
 
     wire [7:0] l1_out; // One output per lif neuron
+    wire [7:0] l1_state;
     reg [7:0] sum; // register to hold the summation
 
     //Instantiate 8 lif neurons
