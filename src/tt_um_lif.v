@@ -17,7 +17,7 @@ module tt_um_lif (
     // assign uio_out[6:0] = 6'd0;
 
     // instantiate lif neuron
-    lif_network (.current(ui_in), .spike_out(uo_out), .state_out(uio_out), .ena(ena), .clk(clk), .rst_n(rst_n));
+    lif_network lif_network (.current(ui_in), .spike_out(uo_out), .state_out(uio_out), .ena(ena), .clk(clk), .rst_n(rst_n));
 
 
 endmodule
