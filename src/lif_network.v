@@ -27,7 +27,7 @@ module lif_network (
 
     always @(posedge clk) begin
         if (!rst_n) begin
-            sum <= 0;
+            sum <= 8'b0;
         end else begin
             sum <= l1_out[0] + l1_out[1] + l1_out[2] + l1_out[3] + l1_out[4] +
             l1_out[5] + l1_out[6] + l1_out[7];
