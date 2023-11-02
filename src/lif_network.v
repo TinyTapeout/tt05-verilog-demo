@@ -4,7 +4,6 @@ module lif_network (
     input  wire [7:0] current,    // Dedicated inputs - connected to the input switches
     output wire [7:0] spike_out,   // Dedicated outputs - connected to the 7 segment display
     output wire [7:0] state_out, //
-    input  wire       ena,      // will go high when the design is enabled
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
