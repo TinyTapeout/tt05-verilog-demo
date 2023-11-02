@@ -1,7 +1,7 @@
 `default_nettype none
 
 module lif ( 
-    input wire current,
+    input wire [7:0] current,
     input wire       clk,
     input wire       rst_n,
     output wire      spike,
@@ -21,6 +21,6 @@ module lif (
 
     // next_state logic and spiking logic
     assign spike = (state >= threshold);
-    assign next_state = (spike ? 8'b0 : current) + (spike ? 0 : (state >> 1)+(state >> 2)+(state >> 3));
+    assign next_state = (spike ? 0 : current) + (spike ? 0 : (state >> 1)+(state >> 2)+(state >> 3));
 
 endmodule
