@@ -10,7 +10,10 @@ module lif_network (
 
     wire [7:0] l1_out; // One output per lif neuron
     wire [63:0] l1_state;
+<<<<<<< HEAD
     // wire [7:0] sum_in; 
+=======
+>>>>>>> parent of b7aa3cf (separate combinational logic from sequential logic)
     reg  [7:0] sum; // register to hold the summation
 
     //Instantiate 8 lif neurons
@@ -40,12 +43,15 @@ always @(posedge clk) begin
     end
 end
 
+<<<<<<< HEAD
     // always @(*) begin
     //     sum_in = l1_out[0] + l1_out[1] + l1_out[2] + l1_out[3] + l1_out[4] +
     //         l1_out[5] + l1_out[6] + l1_out[7];
     // end
 
 
+=======
+>>>>>>> parent of b7aa3cf (separate combinational logic from sequential logic)
     // Output neuron
     lif output_neuron (.current(sum), .clk(clk), .rst_n(rst_n), .spike(spike_out), .state(state_out));
 
