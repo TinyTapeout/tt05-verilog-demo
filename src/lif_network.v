@@ -29,8 +29,8 @@ module lif_network (
         if (!rst_n) begin
             sum <= 0;
         end else begin
-            sum <= l1_out[7:0] + l1_out[15:8] + l1_out[23:16] + l1_out[31:24] + l1_out[39:32] +
-            l1_out[47:40] + l1_out[55:48] + l1_out[63:56];
+            sum <= l1_out[0] + l1_out[1] + l1_out[2] + l1_out[3] + l1_out[4] +
+            l1_out[5] + l1_out[6] + l1_out[7];
         end
     end
 
