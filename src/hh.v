@@ -11,7 +11,7 @@ module hh  (
     reg [13:0]  Cm, gNa, gK, gL, ENa, EK, EL;
     reg [13:0]  alpha_n, beta_n, alpha_m;
     reg [13:0]  n_val, m_val, h_val;
-    reg [13:0]  dt; // 000000000.00001 --> 0.03..
+    reg [13:0]  V, dt; // 000000000.00001 --> 0.03..
     wire [13:0] gNat, gKt, gLt;
     wire [13:0] one_bit;
     wire [13:0] alpha_n_new, alpha_m_new, alpha_h_new;
