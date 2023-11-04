@@ -10,7 +10,7 @@ module hh  (
     //reg [7:0] next_state, threshold, current, INa, IK, IKleak, m_alph, m_beta, m_act, h_alph, h_beta, h_act, n_alph, n_beta, n_act;
     reg [13:0]  Cm, gNa, gK, gL, ENa, EK, EL;
     reg [13:0]  alpha_n, beta_n, alpha_m, beta_m, alpha_h, beta_h;
-    reg [13:0]  n_val, m_val, h_val;
+    reg [13:0]  n, m, h;
     reg [13:0]  V, dt; // 000000000.00001 --> 0.03..
     wire [13:0] gNat, gKt, gLt;
     wire [13:0] one_bit;
