@@ -4,7 +4,7 @@ module hh  (
     input  wire [13:0] current, // 000001010_00000 --> 10
     output wire [13:0] V_new,
     input  wire        clk,
-    input  wire        rst_n, 
+    input  wire        rst_n
      );
 
     //reg [7:0] next_state, threshold, current, INa, IK, IKleak, m_alph, m_beta, m_act, h_alph, h_beta, h_act, n_alph, n_beta, n_act;

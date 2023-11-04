@@ -20,6 +20,7 @@ module tt_um_hh  (
 
     assign uo_out       = voltage[13:6];
     assign uio_out[7:2] = voltage[5:0];
+    assign uio_out[1:0] = 2'b00;
 
     // instantiate hh neuron
     hh hh1(.current({ui_in, 6'b0}), .clk(clk), .rst_n(rst_n), .V_new(voltage));
