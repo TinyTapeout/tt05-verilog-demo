@@ -13,6 +13,7 @@ module hh  (
     reg [13:0]  n, m, h;
     reg [13:0]  V, dt; // 000000000.00001 --> 0.03..
     wire [13:0] gNat, gKt, gLt;
+    wire [13:0] INa, IK, IL;
     wire [13:0] one_bit;
     wire [13:0] alpha_n_new, alpha_m_new, alpha_h_new;
     wire [13:0] beta_n_new, beta_m_new, beta_h_new;
@@ -35,9 +36,6 @@ module hh  (
             beta_m  <= 14'b000000000_00011; // 0.108 --> 0.125
             alpha_h <= 14'b000000000_00001; // 0.00271 --> 0.125
             beta_h  <= 14'b000000000_11111; // 0.97 --> 0.875
-            gNat    <= 14'b000000000_00000; // init to zero
-            gKt     <= 14'b000000000_00000; // init to zero
-            gLt     <= 14'b000000000_00000; // init to zero
             dt      <= beta_n;
 
             // Initial values for m,n and h
